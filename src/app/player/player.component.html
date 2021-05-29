@@ -1,0 +1,28 @@
+<div class="component-wrapper">
+  <div class="component-title"><i class="fab fa-angular"></i> Component: Player</div>
+
+</div>
+<footer class="bg-black sticky text-white text-center text-lg-start">
+
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="grid-container">
+      <div>
+        <div class="btn-group">
+          <a href="#!" class="btn" [ngClass]="{'btn-success':ws.isPlaying, 'btn-outline-success':!ws.isPlaying}"
+            (click)="ws.playPause()"><i class="fas fa-play"></i></a>
+          <a href="#!" class="btn" [ngClass]="{'btn-success':ws.isPaused, 'btn-outline-success':!ws.isPaused}"
+            (click)="ws.playPause()"><i class="fas fa-pause"></i></a>
+          <a href="#!" class="btn" [ngClass]="{'btn-success':ws.isStopped, 'btn-outline-success':!ws.isStopped}"
+            (click)="ws.onStopPressed()"><i class="fas fa-stop"></i></a>
+        </div>
+      </div>
+
+      <div id="waveform"></div>
+      <div>{{ ws.nowplayingTitle }}</div>
+    </div>
+
+    <div id="wave-timeline"></div>
+  </div>
+</footer>

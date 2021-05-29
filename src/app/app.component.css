@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Yellowtail&display=swap');
+p {
+  font-family: Lato;
+}
+.title {
+  font-family: 'Bebas Neue', cursive;
+
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 8em;
+  margin:0px;
+  line-height:1em;
+}
+.subtitle {
+  font-family: 'Great Vibes', cursive;
+
+  color:rgba(255, 255, 0,1) !important;
+  text-shadow:0px 0px 4px rgba(0,0,0,1);
+  font-size:5em;
+  margin-top:-5vh;
+
+
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: min-content;
+  gap: 0px 40px;
+  grid-template-areas: '. .';
+}
+
+.component-wrapper {
+  border: 3px solid yellow;
+  background-color: yellow;
+  margin: 24px;
+  box-shadow: 4px 14px 34px rgba(0, 0, 0, 0.2);
+ border-radius:12px 12px 0px 0px;
+}
+.component-wrapper .component-title {
+
+  font-family: 'Bebas Neue', cursive;
+  border-bottom:1px dotted #333;
+  margin-bottom:12px;
+}
+app-player {
+  position:absolute;
+  bottom:0px;
+  width:100vw;
+}

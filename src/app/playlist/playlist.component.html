@@ -1,0 +1,20 @@
+<div class="card" style="width: 18rem;">
+  <img
+    src="https://mdbootstrap.com/img/new/standard/city/062.jpg"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body">
+    <h5 class="card-title">Godfather Theme Playlist</h5>
+    <p class="card-text">
+      Same song
+    </p>
+  </div>
+  <div class="list-group">
+    <button *ngFor="let playitem of ws.playlist" (click)="ws.playTrack(playitem.url, playitem.trackid, playitem.title)" type="button" class="list-group-item list-group-item-action" [ngClass]="{'active': playitem.trackid == ws.nowplayingTrackid}">{{ playitem.title }}</button>
+  </div>
+  <div class="card-body">
+    <a href="#" class="card-link"><i class="fas fa-heart"></i></a>
+    <a href="#" class="card-link"><i class="fas fa-share"></i></a>
+  </div>
+</div>

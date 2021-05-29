@@ -1,0 +1,19 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: max-content 1fr 2fr;
+  grid-template-rows: min-content;
+  gap: 0px 0px;
+  grid-template-areas: '. . .';
+}
+
+.component-wrapper {
+  border: 3px solid #00b74a;
+  background-color: #00b74a;
+  color:#FFF;
+  margin: 0px;
+  box-shadow: 4px 14px 34px rgba(0, 0, 0, 0.2);
+  border-radius: 4px 4px 0px 0px;
+}
+.component-wrapper .component-title {
+  font-family: 'Bebas Neue', cursive;
+}

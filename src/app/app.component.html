@@ -1,0 +1,34 @@
+<div class="grid-container">
+  <div class="component-wrapper">
+    <div class="component-title"><i class="fab fa-angular"></i> Component: Playlist</div>
+    <app-playlist></app-playlist>
+  </div>
+  <div>
+  <div class="title">Wavesurfer</div>
+  <div class="subtitle">Service</div>
+
+<ul class="list-group list-group-flush"><li class="list-group-item">
+We can build a persistent audio player by utilizing a service to load WaveSurfer, and rendering the waveform via an element in a dedicated component.
+</li>
+<li class="list-group-item">Any component that injects the service can then user the service to play a track.</li>
+<li class="list-group-item">As long as this dedicated component exists outside of the router outlet, audio will be persistent and will play uninterrupted, even as the visitor navigates to other routes
+  <br><br><pre>
+    &lt;router-outlet&gt;&lt;/router-outlet&gt;
+    &lt;app-player&gt;&lt;/app-player&gt;
+  </pre>
+  
+   </li>
+<li class="list-group-item">
+
+
+Each item in the playlist handles clicks with the Wavesurfer Service's playTrack method:
+
+</li>
+</ul>
+<pre>(click)="ws.playTrack(playitem.url, playitem.trackid, playitem.title)"</pre>
+
+
+
+
+</div></div>
+<app-player></app-player>
