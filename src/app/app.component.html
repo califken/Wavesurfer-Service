@@ -8,10 +8,15 @@
   <div class="subtitle">Service</div>
 
 <ul class="list-group list-group-flush"><li class="list-group-item">
-We can build a persistent audio player by utilizing a service to load WaveSurfer, and rendering the waveform via an element in a dedicated component.
+<h4>WaveSurfer as a service</h4>
+Utilizing a service to load WaveSurfer, and rendering the waveform on an element in a dedicated component.
 </li>
-<li class="list-group-item">Any component that injects the service can then user the service to play a track.</li>
-<li class="list-group-item">As long as this dedicated component exists outside of the router outlet, audio will be persistent and will play uninterrupted, even as the visitor navigates to other routes
+<li class="list-group-item">
+  <h4>Media control injection</h4>
+  Any component that injects the service is able to play and control the WaveSurfer player.</li>
+<li class="list-group-item">
+  <h4>Persistent audio player</h4>
+  As long as the player component exists outside of the router outlet, audio will be persistent and will play uninterrupted, even as the visitor navigates to other routes.
   <br><br><pre>
     &lt;router-outlet&gt;&lt;/router-outlet&gt;
     &lt;app-player&gt;&lt;/app-player&gt;

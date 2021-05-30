@@ -25,6 +25,7 @@ export class WavesurferService {
     'https://ia800508.us.archive.org/15/items/LoveThemeFromTheGodfather/02LoveThemeFromTheGodfather.mp3';
   nowplayingTrackid;
   nowplayingTitle;
+  nowplayingState = 'Ready';
   playlist = [
     {
       trackid: 1,
@@ -65,7 +66,7 @@ export class WavesurferService {
         this.wave.play();
         this.isPlaying = true;
       });
-      
+
       this.wave.on('audioprocess', () => this.waveOnAudioprocess());
       this.wave.on('play', () => this.playbackAction('play'));
       this.wave.on('pause', () => this.playbackAction('pause'));
@@ -102,6 +103,7 @@ export class WavesurferService {
 
   onStopPressed(): void {
     this.wave.stop();
+    this.nowplayingState = 'Now Stopped ... ';
     this.currentTimeSrc.next(0);
   }
 
@@ -125,18 +127,21 @@ export class WavesurferService {
         this.isPaused = false;
         this.isStopped = true;
         this.playStatus = 'stopped';
+        this.nowplayingState = 'Now Stopped.';
         break;
       case 'playing':
         this.isPlaying = true;
         this.isPaused = false;
         this.isStopped = false;
         this.playStatus = 'playing';
+        this.nowplayingState = 'Now Playing: ';
         break;
       case 'paused':
         this.isPlaying = false;
         this.isPaused = true;
         this.isStopped = false;
         this.playStatus = 'paused';
+        this.nowplayingState = 'Now Paused';
         break;
       default:
         return;
@@ -147,14 +152,15 @@ export class WavesurferService {
     if (this.wave && this.wave.isPlaying()) {
       this.wave.stop();
     }
-
-    this.nowplayingTitle = `Now Loading: ${title}`;
+    this.nowplayingState = 'Now Loading ... ';
+    this.nowplayingTitle = `${title}`;
     Promise.resolve().then(() => this.wave.load(file));
 
     this.wave.on('ready', () => {
       this.wave.play();
       this.nowplayingTrackid = id;
-      this.nowplayingTitle = `Now Playing: ${title}`;
+      this.nowplayingTitle = `${title}`;
+      this.nowplayingState = 'Now Playing: ';
     });
   }
 }
